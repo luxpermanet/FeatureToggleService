@@ -1,0 +1,8 @@
+{
+  "FeatureName": "TEST_FEATURE",
+  "SerializedFeatureToggleEntities": [
+    {
+      "IncludedUsers": "USER1"
+    }
+  ]
+}

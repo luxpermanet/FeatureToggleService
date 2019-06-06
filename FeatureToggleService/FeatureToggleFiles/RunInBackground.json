@@ -1,0 +1,21 @@
+{
+  "FeatureName": "RunInBackground",
+  "SerializedFeatureToggleEntities": [
+    {
+      "Condition": true
+    },
+    {
+      "DateTimeIntervalBegin": "2019-05-16T15:00:00",
+      "DateTimeIntervalEnd": "2019-05-17T15:00:00",
+      "ExcludedDaysOfWeek": "Wednesday",
+      "ExcludedInstallations": "SAMPLE_INSTALLATION#2",
+      "ExcludedUsers": "USER#2",
+      "IncludedDaysOfWeek": "Monday;Tuesday;Thursday;Friday;Saturday;Sunday",
+      "IncludedInstallations": "SAMPLE_INSTALLATION#1",
+      "IncludedUsers": "USER#1",
+      "Condition": false,
+      "TimeOfDayIntervalBegin": "15:00:00",
+      "TimeOfDayIntervalEnd": "16:00:00"
+    }
+  ]
+}

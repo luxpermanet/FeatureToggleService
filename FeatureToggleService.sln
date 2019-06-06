@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureToggleService", "FeatureToggleService\FeatureToggleService.csproj", "{8D480012-0CBA-410C-9AAA-8669A6429BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggleService.Tests", "FeatureToggleService.Tests\FeatureToggleService.Tests.csproj", "{58A99399-2F1B-493C-A431-A0C561ED9C3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D480012-0CBA-410C-9AAA-8669A6429BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D480012-0CBA-410C-9AAA-8669A6429BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D480012-0CBA-410C-9AAA-8669A6429BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D480012-0CBA-410C-9AAA-8669A6429BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A99399-2F1B-493C-A431-A0C561ED9C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A99399-2F1B-493C-A431-A0C561ED9C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A99399-2F1B-493C-A431-A0C561ED9C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A99399-2F1B-493C-A431-A0C561ED9C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4298CA1-BB0B-4B4A-9712-5F440B08F08E}
+	EndGlobalSection
+EndGlobal
