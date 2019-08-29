@@ -5,7 +5,7 @@ using Xunit;
 
 namespace FeatureToggleService.Tests.Models
 {
-    public class DayOfWeekCollectionConditionTest
+    public class DaysOfWeekConditionTest
     {
         [Fact]
         public void ConstructorShouldThrowExceptionWhenDaysOfWeekAreNull()
@@ -15,7 +15,7 @@ namespace FeatureToggleService.Tests.Models
             // Act
 
             // Assert
-            Assert.Throws<ArgumentNullException>(() => new DayOfWeekCollectionCondition(null));
+            Assert.Throws<ArgumentNullException>(() => new DaysOfWeekCondition(null));
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace FeatureToggleService.Tests.Models
             // Act
 
             // Assert
-            Assert.Throws<ArgumentNullException>(() => new DayOfWeekCollectionCondition());
+            Assert.Throws<ArgumentNullException>(() => new DaysOfWeekCondition());
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace FeatureToggleService.Tests.Models
         {
             // Arrange
             var now = new DateTime(2019, 5, 15); // Wednesday
-            var condition = new DayOfWeekCollectionCondition(DayOfWeek.Monday, DayOfWeek.Tuesday);
+            var condition = new DaysOfWeekCondition(DayOfWeek.Monday, DayOfWeek.Tuesday);
             var context = new Context(now, null, null);
 
             // Act
@@ -49,7 +49,7 @@ namespace FeatureToggleService.Tests.Models
         {
             // Arrange
             var now = new DateTime(2019, 5, 15); // Wednesday
-            var condition = new DayOfWeekCollectionCondition(DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday);
+            var condition = new DaysOfWeekCondition(DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday);
             var context = new Context(now, null, null);
 
             // Act

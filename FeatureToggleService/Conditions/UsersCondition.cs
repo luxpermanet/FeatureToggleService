@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace FeatureToggleService.Conditions
 {
-    public class UserCollectionCondition : Condition
+    public class UsersCondition : Condition
     {
         public readonly string[] Users;
 
-        public UserCollectionCondition(params string[] users)
+        public UsersCondition(params string[] users)
         {
             if (users == null || users.Length == 0) { throw new ArgumentNullException(nameof(users)); }
 

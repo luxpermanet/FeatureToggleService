@@ -5,37 +5,37 @@ using Xunit;
 
 namespace FeatureToggleService.Tests.Models
 {
-    public class InstallationConditionTest
+    public class UsersConditionTest
     {
         [Fact]
-        public void ConstructorShouldThrowExceptionWhenInstallationIsNull()
+        public void ConstructorShouldThrowExceptionWhenUsersAreNull()
         {
             // Arrange
 
             // Act
 
             // Assert
-            Assert.Throws<ArgumentNullException>(() => new InstallationCondition(null));
+            Assert.Throws<ArgumentNullException>(() => new UsersCondition(null));
         }
 
         [Fact]
-        public void ConstructorShouldThrowExceptionWhenInstallationIsEmpty()
+        public void ConstructorShouldThrowExceptionWhenUsersAreEmpty()
         {
             // Arrange
 
             // Act
 
             // Assert
-            Assert.Throws<ArgumentNullException>(() => new InstallationCondition(string.Empty));
+            Assert.Throws<ArgumentNullException>(() => new UsersCondition());
         }
 
         [Fact]
-        public void ConditionHoldsShouldReturnFalseWhenInstallationIsNotEqualToInstallation()
+        public void ConditionHoldsShouldReturnFalseWhenUserIsNotInUsersCollection()
         {
             // Arrange
-            var installation = "SAMPLE_INSTALLATION";
-            var condition = new InstallationCondition("INSTALLATION#1");
-            var context = new Context(null, null, installation);
+            var user = "SAMPLE_USER";
+            var condition = new UsersCondition("USER#1", "USER#2");
+            var context = new Context(null, user, null);
 
             // Act
             var conditionHolds = condition.Holds(context);
@@ -45,12 +45,12 @@ namespace FeatureToggleService.Tests.Models
         }
 
         [Fact]
-        public void ConditionHoldsShouldReturnTrueWhenInstallationIsEqualToInstallation()
+        public void ConditionHoldsShouldReturnTrueWhenUserIsInUsersCollection()
         {
             // Arrange
-            var installation = "SAMPLE_INSTALLATION";
-            var condition = new InstallationCondition("SAMPLE_INSTALLATION");
-            var context = new Context(null, null, installation);
+            var user = "SAMPLE_USER";
+            var condition = new UsersCondition("USER#1", "USER#2", "SAMPLE_USER");
+            var context = new Context(null, user, null);
 
             // Act
             var conditionHolds = condition.Holds(context);
@@ -64,7 +64,7 @@ namespace FeatureToggleService.Tests.Models
         {
             // Arrange
             var now = DateTime.UtcNow;
-            var condition = new InstallationCondition("INSTALLATION#1");
+            var condition = new UsersCondition("USER#1", "USER#2");
 
             // Act
 
@@ -73,11 +73,11 @@ namespace FeatureToggleService.Tests.Models
         }
 
         [Fact]
-        public void ConditionHoldsShouldThrowExceptionWhenInstallationIsNotProvided()
+        public void ConditionHoldsShouldThrowExceptionWhenUserIsNotProvided()
         {
             // Arrange
             var now = DateTime.UtcNow;
-            var condition = new InstallationCondition("INSTALLATION#1");
+            var condition = new UsersCondition("USER#1", "USER#2");
             var context = new Context(null, null, null);
 
             // Act

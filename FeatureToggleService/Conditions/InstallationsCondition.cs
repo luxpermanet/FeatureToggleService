@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace FeatureToggleService.Conditions
 {
-    public class InstallationCollectionCondition : Condition
+    public class InstallationsCondition : Condition
     {
         public readonly string[] Installations;
 
-        public InstallationCollectionCondition(params string[] installations)
+        public InstallationsCondition(params string[] installations)
         {
             if (installations == null || installations.Length == 0) { throw new ArgumentNullException(nameof(installations)); }
 

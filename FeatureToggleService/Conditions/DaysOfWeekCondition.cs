@@ -4,11 +4,11 @@ using FeatureToggleService.Misc;
 
 namespace FeatureToggleService.Conditions
 {
-    public class DayOfWeekCollectionCondition : Condition
+    public class DaysOfWeekCondition : Condition
     {
         public readonly DayOfWeek[] DaysOfWeek;
 
-        public DayOfWeekCollectionCondition(params DayOfWeek[] daysOfWeek)
+        public DaysOfWeekCondition(params DayOfWeek[] daysOfWeek)
         {
             if (daysOfWeek == null || daysOfWeek.Length == 0) { throw new ArgumentNullException(nameof(daysOfWeek)); }
 

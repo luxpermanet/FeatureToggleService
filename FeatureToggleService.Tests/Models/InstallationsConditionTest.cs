@@ -1,43 +1,41 @@
 ﻿using FeatureToggleService.Conditions;
 using FeatureToggleService.Misc;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace FeatureToggleService.Tests.Models
 {
-    public class UserConditionTest
+    public class InstallationsConditionTest
     {
         [Fact]
-        public void ConstructorShouldThrowExceptionWhenUserIsNull()
+        public void ConstructorShouldThrowExceptionWhenInstallationsAreNull()
         {
             // Arrange
 
             // Act
 
             // Assert
-            Assert.Throws<ArgumentNullException>(() => new UserCondition(null));
+            Assert.Throws<ArgumentNullException>(() => new InstallationsCondition(null));
         }
 
         [Fact]
-        public void ConstructorShouldThrowExceptionWhenUserIsEmpty()
+        public void ConstructorShouldThrowExceptionWhenInstallationsAreEmpty()
         {
             // Arrange
 
             // Act
 
             // Assert
-            Assert.Throws<ArgumentNullException>(() => new UserCondition(string.Empty));
+            Assert.Throws<ArgumentNullException>(() => new InstallationsCondition());
         }
 
         [Fact]
-        public void ConditionHoldsShouldReturnFalseWhenUserIsNotEqualToUser()
+        public void ConditionHoldsShouldReturnFalseWhenInstallationIsNotInInstallationsCollection()
         {
             // Arrange
-            var user = "SAMPLE_USER";
-            var condition = new UserCondition("USER#1");
-            var context = new Context(null, user, null);
+            var installation = "SAMPLE_INSTALLATION";
+            var condition = new InstallationsCondition("INSTALLATION#1", "INSTALLATION#2");
+            var context = new Context(null, null, installation);
 
             // Act
             var conditionHolds = condition.Holds(context);
@@ -47,12 +45,12 @@ namespace FeatureToggleService.Tests.Models
         }
 
         [Fact]
-        public void ConditionHoldsShouldReturnTrueWhenUserIsEqualToUser()
+        public void ConditionHoldsShouldReturnTrueWhenInstallationIsInInstallationsCollection()
         {
             // Arrange
-            var user = "SAMPLE_USER";
-            var condition = new UserCondition("SAMPLE_USER");
-            var context = new Context(null, user, null);
+            var installation = "SAMPLE_INSTALLATION";
+            var condition = new InstallationsCondition("INSTALLATION#1", "INSTALLATION#2", "SAMPLE_INSTALLATION");
+            var context = new Context(null, null, installation);
 
             // Act
             var conditionHolds = condition.Holds(context);
@@ -66,7 +64,7 @@ namespace FeatureToggleService.Tests.Models
         {
             // Arrange
             var now = DateTime.UtcNow;
-            var condition = new UserCondition("USER#1");
+            var condition = new InstallationsCondition("INSTALLATION#1", "INSTALLATION#2");
 
             // Act
 
@@ -75,11 +73,11 @@ namespace FeatureToggleService.Tests.Models
         }
 
         [Fact]
-        public void ConditionHoldsShouldThrowExceptionWhenUserIsNotProvided()
+        public void ConditionHoldsShouldThrowExceptionWhenInstallationIsNotProvided()
         {
             // Arrange
             var now = DateTime.UtcNow;
-            var condition = new UserCondition("USER#1");
+            var condition = new InstallationsCondition("INSTALLATION#1", "INSTALLATION#2");
             var context = new Context(null, null, null);
 
             // Act
