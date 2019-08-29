@@ -44,5 +44,20 @@ namespace FeatureToggleService.Misc
         {
             return Allow.DaysOfWeek(daysOfWeek).Negate();
         }
+
+        public static Condition User(string user)
+        {
+            return Users(user);
+        }
+
+        public static Condition Installation(string installation)
+        {
+            return Installations(installation);
+        }
+
+        public static Condition DayOfWeek(DayOfWeek dayOfWeek)
+        {
+            return DaysOfWeek(dayOfWeek);
+        }
     }
 }
