@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using FeatureToggleService.Serializers;
+using FeatureToggleService.Models;
 
 namespace FeatureToggleService.StorageProviders
 {
     interface IStorageProvider
     {
         IEnumerable<string> GetFeatureToggleNames();
-        SerializedFeatureToggle GetFeatureToggle(string featureName);
+        FeatureToggle GetFeatureToggle(string featureName);
         bool HasFeatureToggle(string featureName);
-        void SaveFeatureToggle(SerializedFeatureToggle serializedFeatureToggle);
+        void SaveFeatureToggle(FeatureToggle serializedFeatureToggle);
         bool DeleteFeatureToggle(string featureName);
     }
 }
